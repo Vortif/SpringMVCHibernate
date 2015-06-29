@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import spring.model.Person;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class HibernatePersonDAO implements PersonDAO {
         this.sessionFactory = sessionFactory;
     }
 
-    @Override
+    @Override@Transactional
     public void addPerson(Person p) {
 
         log.entry();

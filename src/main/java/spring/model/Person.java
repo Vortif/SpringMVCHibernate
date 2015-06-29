@@ -12,8 +12,8 @@ public class Person {
 
     @Id
     @Column(name = "id")
-    @SequenceGenerator(name = "person_seq", sequenceName = "persontable")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_seq")
+    @GeneratedValue(generator = "id_seq", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "id_seq", sequenceName = "id_seq", allocationSize = 1)
     private int id;
 
     @Column(name = "name", nullable = false)
