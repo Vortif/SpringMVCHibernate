@@ -49,11 +49,16 @@ public class PersonController {
         logger.info("\nEntering addPerson\n");
 
         if(p.getId() == 0){
+            logger.info("\nADDING\n");
             personService.addPerson(p);
+            logger.info("\nPerson added: " + p+"\n");
+
         }else{
+            logger.info("\nUPDATING\n");
             personService.updatePerson(p);
+            logger.info("\nPerson updated: " + p+"\n");
+
         }
-        logger.info("\nPerson added: " + p+"\n");
         logger.info("\nBefore redirect:/persons\n");
         logger.exit();
         return "redirect:/persons";

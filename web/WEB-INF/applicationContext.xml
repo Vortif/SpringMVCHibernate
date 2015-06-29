@@ -17,58 +17,7 @@
     <aop:aspectj-autoproxy proxy-target-class="true"/>
     <resources mapping="/views/**" location="/WEB-INF/views" />
     <context:component-scan base-package="spring">
-
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
-    <!-- Hibernate 4 SessionFactory Bean definition -->
-    <!--<beans:bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean ">-->
-        <!--<beans:property name="dataSource" ref="dataSource" />-->
-        <!--<beans:property name="annotatedClasses">-->
-            <!--<beans:list>-->
-                <!--<beans:value>spring.model.Person</beans:value>-->
-            <!--</beans:list>-->
-        <!--</beans:property>-->
-
-        <!--<beans:property name="hibernateProperties">-->
-            <!--<beans:props>-->
-                <!--<beans:prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect-->
-                <!--</beans:prop>-->
-                <!--<beans:prop key="hibernate.show_sql">true</beans:prop>-->
-                <!--<beans:prop key="hbm2ddl.auto">update</beans:prop>-->
-                <!--<beans:prop key="configLocation">classpath:hibernate.cfg.xml</beans:prop>-->
-
-            <!--</beans:props>-->
-        <!--</beans:property>-->
-    <!--</beans:bean>-->
-
-    <!--&lt;!&ndash; Handles HTTP GET requests for /resources/** by efficiently serving-->
-        <!--up static resources in the ${webappRoot}/resources directory &ndash;&gt;-->
-
-    <!--<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"-->
-                <!--destroy-method="close">-->
-        <!--<beans:property name="driverClassName" value="org.postgresql.Driver" />-->
-        <!--<beans:property name="url"-->
-                        <!--value="jdbc:postgresql://localhost/personmvcdb" />-->
-        <!--<beans:property name="username" value="postgres" />-->
-        <!--<beans:property name="password" value="haslo" />-->
-
-    <!--</beans:bean>-->
-
-    <!--<beans:bean id="personDAO" class="spring.dao.HibernatePersonDAO">-->
-        <!--<beans:property name="sessionFactory" ref="sessionFactory" />-->
-    <!--</beans:bean>-->
-
-    <!--<beans:bean id="personService" class="spring.service.SimplePersonService">-->
-        <!--<beans:property name="personDAO" ref="personDAO"/>-->
-    <!--</beans:bean>-->
-
-    <!--&lt;!&ndash;<tx:annotation-driven transaction-manager="transactionManager"/>&ndash;&gt;-->
-
-    <!--<beans:bean id="txManager"-->
-          <!--class="org.springframework.orm.hibernate4.HibernateTransactionManager">-->
-        <!--<beans:property name="sessionFactory">-->
-            <!--<beans:ref bean="sessionFactory" />-->
-        <!--</beans:property>-->
-    <!--</beans:bean>-->
 
 </beans:beans>

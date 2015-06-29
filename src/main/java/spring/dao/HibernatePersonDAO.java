@@ -49,7 +49,7 @@ public class HibernatePersonDAO implements PersonDAO {
         log.entry();
 
         Session session = sessionFactory.openSession();
-        session.update(p);
+        session.saveOrUpdate(p);
         session.close();
         log.info("\nPerson updated successfully, Person Details="+p+"\n");
 
@@ -81,7 +81,7 @@ public class HibernatePersonDAO implements PersonDAO {
         log.entry();
         Session session = this.sessionFactory.openSession();
         Person p = (Person) session.load(Person.class, new Integer(id));
-        log.info("Person loaded successfully, Person details="+p);
+        log.info("\nPerson loaded successfully, Person details="+p+"\n");
         session.close();
         log.exit();
 
@@ -98,8 +98,7 @@ public class HibernatePersonDAO implements PersonDAO {
             session.delete(p);
         }
         session.close();
-        log.info("Person deleted successfully, person details="+p);
-
+        log.info("\nPerson deleted successfully, person details="+p+"\n");
         log.exit();
     }
 }
