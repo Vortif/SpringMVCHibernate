@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="SpringMVCHibernate">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="SpringMVCHibernate.war">
+      <element id="artifact" artifact-name="SpringMVCHibernate:war exploded" />
+    </root>
+  </artifact>
+</component>
